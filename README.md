@@ -11,15 +11,15 @@ A basic console-based To-Do List app written in C++ to help you manage your task
 
 ## 📦 How It Works
 
-The app runs in the terminal and stores tasks as longs as its opened Tasks are stored with:
+The app runs in the terminal and stores tasks as long as The Application is opened. Tasks are stored with:
 - An `ID`
 - A `Title`
 - A `Status` (Done / Not Done)
 
 ## 💻 How to Run
-# Method 1: 
+# Method 1
 Install The Release As An EXE
-# Method 2:
+# Method 2
 1. Clone or download this repo.
 2. Compile the code using g++:
    ```bash
