@@ -1,0 +1,57 @@
+   if (auth.login() == true) {
+         do {
+        cout << "\n-------To Do List-------\n";
+        cout << "Tasks Are Erased After Application Is Terminated\n";
+        cout << "1. Add Task\n";
+        cout << "2. View Task(s)\n";
+        cout << "3. Mark Task As Done\n";
+        cout << "4. Exit\n";
+        cout << "Enter Your Choice: ";
+        cin >> choice;
+        cin.ignore();
+        if (choice == 1) {
+                cout << "Enter Task Title: ";
+                getline(cin, task1[taskcount].title);
+                task1[taskcount].id = nextid++;
+                task1[taskcount].isdone = false;
+                taskcount++;
+                cout << "Task Added";
+        }
+        else if (choice == 2) {
+                if (taskcount == 0) {
+                    cout << "\n----No Tasks To Show! Please Add Some First----\n";
+                    }
+        for (int i =0; i < taskcount; i++) {
+            cout << task1[i].id << ". " << task1[i].title;
+            if (task1[i].isdone == false) {
+                cout << " Status: NotDone.\n";
+            } else if (task1[i].isdone == true) {
+                cout << " Status: Done.\n";
+            }
+            } }
+        else if (choice == 3) {
+            int idmark;
+            cout << "Enter Task Id To Mark: ";
+            cin >> idmark;
+            bool found = false;
+
+            for (int i = 0; i < taskcount; i++) {
+                if (task1[i].id == idmark) {
+                    task1[i].isdone = true;
+                    cout << "Task Marked Done! \n";
+                    found = true;
+                    break;
+                 } }
+          if (!found) {
+            cout << "No Tasks Found To Mark!";
+        } }
+        else if (choice == 4) {
+        cout << "Good Bye!";
+        }
+        else {
+        cout << "Invalid Choice";
+        break;
+        }
+        } while (choice != 4);
+}
+}
